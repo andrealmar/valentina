@@ -6,9 +6,9 @@ python:
 env:
   global:
     - ALLOWED_HOSTS: '127.0.0.1, .localhost'
-    - SECRET_KEY: $SECRET_KEY
-    - SOCIAL_AUTH_FACEBOOK_KEY: $SOCIAL_AUTH_FACEBOOK_KEY
-    - SOCIAL_AUTH_FACEBOOK_SECRET: $SOCIAL_AUTH_FACEBOOK_SECRET
+    - SECRET_KEY: '$SECRET_KEY'
+    - SOCIAL_AUTH_FACEBOOK_KEY: '$SOCIAL_AUTH_FACEBOOK_KEY'
+    - SOCIAL_AUTH_FACEBOOK_SECRET: '$SOCIAL_AUTH_FACEBOOK_SECRET'
 
 # command to install dependencies
 install: "pip install -r requirements.txt"
