@@ -6,7 +6,7 @@ python:
 # command to install dependencies
 install:
   - cp contrib/.env.sample .env 
-  - pip install -q -r requirements.txt
+  - pip install -q -r requirements.txt && python manage.py migrate
 
 # command to run tests
 script: "python manage.py test"
