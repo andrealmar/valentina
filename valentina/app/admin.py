@@ -42,7 +42,7 @@ class MessageModelAdmin(admin.ModelAdmin):
     excerpt.short_description = 'conteúdo'
 
 
-class AffiliatioModelAdmin(admin.ModelAdmin):
+class AffiliationModelAdmin(admin.ModelAdmin):
     list_display = ('user_full_name', 'chat', 'alias')
 
     def user_full_name(self, obj):
@@ -54,4 +54,4 @@ class AffiliatioModelAdmin(admin.ModelAdmin):
 admin.site.register(Profile, ProfileModelAdmin)
 admin.site.register(Chat, ChatModelAdmin)
 admin.site.register(Message, MessageModelAdmin)
-admin.site.register(Affiliation, AffiliatioModelAdmin)
+admin.site.register(Affiliation, AffiliationModelAdmin)

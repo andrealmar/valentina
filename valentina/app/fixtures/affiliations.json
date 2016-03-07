@@ -1,0 +1,20 @@
+[
+{
+  "model": "app.affiliation",
+  "pk": 1,
+  "fields": {
+    "chat": 1,
+    "user": 1,
+    "alias": "Hacker"
+  }
+},
+{
+  "model": "app.affiliation",
+  "pk": 2,
+  "fields": {
+    "chat": 1,
+    "user": 2,
+    "alias": "Nerd"
+  }
+}
+]

@@ -5,45 +5,46 @@
     <div>
       <h1><img src="{% static 'img/valentina.png' %}" alt="Valentina"></h1>
       <ul>
-        <li><a href="#" title="Preferências">{% include 'app/svg/preferences.svg' %}</a></li>
+        <li><a href="#" id="preferences"  title="Preferências">{% include 'app/svg/preferences.svg' %}</a></li>
         <li><a href="{% url 'app:logout' %}" title="Sair">{% include 'app/svg/logout.svg' %}</a></li>
       </ul>
     </div>
   </nav><!-- end nav.app -->
+  
+  <form class="preferences" action="{% url 'app:profile' %}" method="post">
+    <h3>Preferências</h3>
+    <p>
+      Aqui você é conhecida como
+      <input name="nickname" type="text" value="{{ nickname }}"> 
+    </p>
+    <p>
+      <button type="reset">Cancelar</button>
+      <button type="submit">Salvar</button>
+    </p>
+  </form>
 
   <nav class="chat_list">
 
-    <form action="#">
-      <span>{% include 'app/svg/facebook.svg' %}</span>
-      <input id="fb_url" name="fb_url" placeholder="Cole aqui a URL do Facebook do agressor">
-      <button>{% include 'app/svg/magnifier.svg' %}</button>
-    </form>
-    
-    <h3>Seus grupos</h3>
-    <ul>
-      <li>
-        <a href="#">
-          <span class="chat_alias">Fulano</span>
-          <span class="users">42 Valentinas</span>
-          <span class="notification">2</span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <span class="chat_alias">Ciclano</span>
-          <span class="users">7 Valentinas</span>
-          <span class="notification empty"></span>
-        </a>
-      </li>
-      <li>
-        <a href="#">
-          <span class="chat_alias">Beltrano</span>
-          <span class="users">1 Valentina</span>
-          <span class="notification">134</span>
-        </a>
-      </li>
-    </ul>
-  </nav><!-- end nav.chat_list -->
+    <div>
+      <form class="search-bar">
+        <span>{% include 'app/svg/facebook.svg' %}</span>
+        <input type="search" name="url" placeholder="Cole a URL do Facebook do agressor" />
+        <button type="submit">{% include 'app/svg/magnifier.svg' %}</button>
+      </form>
+
+      <h3>Seus grupos</h3>
+      <ul>
+        {% for chat in chats %}
+        <li data-chat-url="{{ chat.url }}">
+          <a>
+            <span class="chat_alias">{{ chat.alias }}</span>
+            <span class="users">{{ chat.valentinas }} Valentina{{ chat.valentinas|pluralize }}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </nav><!-- end nav.chat_list -->
+  </div>
 
   {% include 'app/footer.html' %}
 

@@ -1,0 +1,22 @@
+[
+{
+  "model": "app.message",
+  "pk": 1,
+  "fields": {
+    "chat": 1,
+    "user": 1,
+    "content": "Hi",
+    "created_at": "1970-01-01T00:00:00.000Z"
+  }
+},
+{
+  "model": "app.message",
+  "pk": 2,
+  "fields": {
+    "chat": 1,
+    "user": 2,
+    "content": "Hey you",
+    "created_at": "1970-01-01T00:00:00.000Z"
+  }
+}
+]

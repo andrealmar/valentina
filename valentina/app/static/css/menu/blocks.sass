@@ -1,10 +1,8 @@
-main, section.col
-
 main
 
   background-color: $main_background_color
 
-  nav.chat_list, footer
+  nav.chat_list, form.preferences, footer
     margin-top: 2rem
     padding-bottom: 0
 
@@ -29,26 +27,25 @@ main
       @include size(1.6rem)
       fill: $main_text_color
 
-  form
+  form.preferences
+    @include flex(1)
+    display: none
+    p, h3
+      margin: 2rem 1rem 0 1rem
+
+  form.search-bar
+    @include clearfix
     position: relative
-    span, button
-      background: #fff
-      border: 0
-      display: block
-      padding: 0
-      position: absolute
     span
-      top: .6rem
+      background: transparent
+      display: block
       left: .5rem
-    button
-      top: .5rem
-      right: .5rem
+      position: absolute
+      top: .6rem
     svg
       @include size(1.2rem)
-      fill: tint($main_background_color, 40%)
     span
-      svg
-        fill: tint($main_background_color, 70%)
+      z-index: 10
 
   nav.chat_list
 
@@ -57,6 +54,8 @@ main
 
     h3, form, li
       margin: 0 1rem
+    h3
+      margin-top: 2rem
     li
       display: block
     a

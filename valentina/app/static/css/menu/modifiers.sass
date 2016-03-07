@@ -9,6 +9,7 @@ main
       &:hover
         text-decoration: none
 
-  button
-    &:hover
-      background: #fff
+  form.search-bar
+    button[type=submit]:hover:not(:disabled)
+      &:hover
+        background: $main_text_color

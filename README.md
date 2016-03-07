@@ -44,7 +44,10 @@ Once you're done with requirements, dependencies and settings, create the basic 
 python manage.py migrate
 python manage.py createsuperuser
 ```
-If you are going to run with ```DEBUG=False```, make sure you run first: 
+
+### In case you are turning off the _debug mode_
+
+If you are going to run the app with `DEBUG=False` first you will have to set the stage for your static files: 
 
 ```
 python manage.py collectstatic

@@ -1,0 +1,22 @@
+[
+{
+  "model": "app.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "gender": "F",
+    "timezone": "-3",
+    "nickname": "joannedoe"
+  }
+},
+{
+  "model": "app.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "gender": "F",
+    "timezone": "-3",
+    "nickname": "jane doe"
+  }
+}
+]

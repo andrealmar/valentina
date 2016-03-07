@@ -5,6 +5,7 @@
   "dependencies": {
     "bitters": "~1.2.0",
     "bourbon": "~4.2.5",
-    "neat": "~1.7.3"
+    "neat": "~1.7.3",
+    "refills": "^0.1.0"
   }
 }

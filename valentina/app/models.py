@@ -14,7 +14,7 @@ class Profile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL,
                                 on_delete=models.CASCADE,
-                                verbose_name='Usuário')
+                                verbose_name='Usuária')
     gender = models.CharField('gênero', max_length=1, choices=GENDERS)
     timezone = models.CharField('fuso-horário', max_length=255)
     nickname = models.CharField('apelido', max_length=255)
@@ -34,8 +34,8 @@ class Profile(models.Model):
 
     class Meta:
         ordering = ['nickname']
-        verbose_name = 'usuário'
-        verbose_name_plural = 'usuários'
+        verbose_name = 'usuária'
+        verbose_name_plural = 'usuárias'
 
 
 class Chat(models.Model):
@@ -63,18 +63,17 @@ class Message(models.Model):
         return Truncator(self.content).words(7)
 
     class Meta:
-        ordering = ['-created_at']
+        ordering = ['created_at']
         verbose_name = 'mensagem'
         verbose_name_plural = 'mensagens'
 
 
 class Affiliation(models.Model):
 
-    chat = models.OneToOneField('Chat', on_delete=models.CASCADE,
-                                verbose_name='Chat')
-    user = models.OneToOneField(settings.AUTH_USER_MODEL,
-                                on_delete=models.CASCADE,
-                                verbose_name='Usuária')
+    chat = models.ForeignKey('Chat')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE,
+                             verbose_name='Usuária')
     alias = models.CharField('Nome fictício', max_length=140)
 
     class Meta:
