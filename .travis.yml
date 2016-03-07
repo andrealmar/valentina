@@ -6,7 +6,7 @@ python:
 env:
   global:
     - ALLOWED_HOSTS: '127.0.0.1, .localhost'
-    - SECRET_KEY: 'r0u5dn8*79ro61^7mnk$m&qjcbdfv$9l*_(87rfbrl1b3#5^5h'
+    - SECRET_KEY: $SECRET_KEY
 
 # command to install dependencies
 install: "pip install -r requirements.txt"
