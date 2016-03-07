@@ -9,7 +9,7 @@ env:
     - SECRET_KEY: 'r0u5dn8*79ro61^7mnk$m&qjcbdfv$9l*_(87rfbrl1b3#5^5h'
 
 # command to install dependencies
-install: "pip install -r requirements.txt --use-mirrors"
+install: "pip install -r requirements.txt"
 
 # command to run tests
 script: "python manage.py test"
